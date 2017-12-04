@@ -1,11 +1,37 @@
+server:
+  port: 9999
 spring:
-    cloud:
-      config:
-        server:
-          git:
-#            uri: http://10.174.142.139:81/rocky/config-repo.git
-            uri: ssh://git@10.174.142.139:2224/rocky/config-repo.git
-#            username: configcenter
-#            password: Me!y0uM!M@yowits.com
-            search-paths: banbu*,rocky*,mail*,client*,gin*
-          
+  cloud:
+    config:
+      allowOverride: true
+      server:
+        git:
+          uri: https://github.com/nine-stars/sc-galaxy-config-repo.git
+          username: 434329122@qq.com
+          password: zklovecjj801122
+          search-paths: sc-mars,sc-pluto,sc-sun-gateway
+      fail-fast: true
+      override-none: true
+      override-system-properties: true
+
+
+
+
+#
+#        allowOverride: true
+#                failFast: true
+#                overrideNone: true #覆盖非系统属性　true不覆盖
+#                overrideSystemProperties: false #覆盖系统属性 false不覆盖
+
+
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://user:password@localhost:8761/eureka/
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+
+
