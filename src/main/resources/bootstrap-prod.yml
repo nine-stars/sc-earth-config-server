@@ -11,27 +11,24 @@ spring:
           password: zklovecjj801122
           search-paths: sc-mars,sc-pluto,sc-sun-gateway
       fail-fast: true
-      override-none: true
-      override-system-properties: true
+      override-none: true   #覆盖非系统属性　true不覆盖
+      override-system-properties: true    #覆盖系统属性 false不覆盖
 
 
 
-
-#
-#        allowOverride: true
-#                failFast: true
-#                overrideNone: true #覆盖非系统属性　true不覆盖
-#                overrideSystemProperties: false #覆盖系统属性 false不覆盖
-
-
-
+# Eureka
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}:${random.value}
   client:
     enabled: true
     service-url:
       defaultZone: http://user:password@localhost:8761/eureka/
     register-with-eureka: true
-  instance:
-    prefer-ip-address: true
+    fetch-registry: true
 
 
+logging:
+  level:
+    root: info

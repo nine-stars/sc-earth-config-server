@@ -21,7 +21,7 @@ public class ConfigServerApplication implements CommandLineRunner{
 	}
 
 	@Override
-	public void run(String... arg0) throws Exception {
-		log.info("sc-earth-config-server start OK");
+	public void run(String... args) throws Exception {
+		log.info(">>>>>>>>>>>>>>> sc-earth-config-server 启动完成<<<<<<<<<<<<<");
 	}
 }
